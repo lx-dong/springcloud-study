@@ -4,18 +4,19 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
 /**
- * Created by lx-dong on 2018/10/12.
+ * Created by lx-dong on 2018/10/15.
  */
 @SpringBootApplication
+@EnableZuulProxy
 @EnableEurekaClient
 @EnableDiscoveryClient
-@EnableFeignClients
-public class ServiceFeignApplication {
+public class ServiceZuulApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run( ServiceFeignApplication.class, args );
+        SpringApplication.run(ServiceZuulApplication.class, args);
     }
+
 }

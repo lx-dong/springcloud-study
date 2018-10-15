@@ -1,0 +1,20 @@
+eureka:
+  client:
+    service-url:
+      defaulZone: http://peer1:8761/eureka, http://peer2:8762/eureka
+
+server:
+  port: 8781
+
+spring:
+  application:
+    name: service-zuul
+
+zuul:
+  routes:
+    api-a:
+      path: /api-a/**
+      serviceId: service-ribbon
+    api-b:
+      path: /api-b/**
+      serviceId: service-feign
